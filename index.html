@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Peasy Speedy Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f0f0f; color: white; font-family: sans-serif; }
+        .bento-card { background: #1e1e1e; border: 1px solid #333; transition: 0.3s; display: block; text-align: center;}
+        .bento-card:hover { border-color: #555; background: #2a2a2a; }
+        .active-nav { border-color: #3b82f6; background: #2563eb; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <header style="display: flex; align-items: center; gap: 30px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
+    
+    
+    
+    <nav>
+        <a href="about.html" style="color: #3b82f6; text-decoration: none; font-weight: bold; font-size: 1.1rem;">About Me</a>
+    </nav>
+
+</header>
+
+    <nav class="flex justify-between items-center mb-12">
+        <h1 class="text-2xl font-bold">Easy Peasy Speedy Learning</h1>
+    </nav>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <a href="index.html" class="bento-card p-4 rounded-xl font-bold active-nav">Home</a>
+        <a href="math.html" class="bento-card p-4 rounded-xl">Math</a>
+        <a href="physics.html" class="bento-card p-4 rounded-xl">Physics</a>
+        <a href="programming.html" class="bento-card p-4 rounded-xl">Programming</a>
+    </div>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-6">Latest Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="video-container"></div>
+    </section>
+
+    <script>
+        const videos = [
+            { title: "Finding information on your own", image: "https://i.ytimg.com/vi/U3lLNrzWFiM/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCYuQSeZixSWVWHE786FLEo9xNrNA", link: "https://youtu.be/U3lLNrzWFiM?si=7Z7yreDjuTMOXKyJ" },
+            { title: "Python", image: "https://i.ytimg.com/vi/shDbAandl-I/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAh24XmY1Pc89meg5z5ZmnlE-EbBA", link: "https://youtu.be/shDbAandl-I?si=SYmO_lP857gybw4X" },
+            { title: "Mecha midterm revision(G10 s2)", image: "https://i.ytimg.com/vi/4hJ3LUxqXRY/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAGIOdlo4tKuFDsnuCYSB738FQBAg", link: "https://youtu.be/4hJ3LUxqXRY?si=8LV1qWQ4vXY3U5eL" },
+            { title: "Trig", image: "https://i.ytimg.com/vi/ryXjJKQzbgs/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDNN26FxCHMOkOhdWE5y3Xj0iZRsg", link: "https://youtu.be/lOlRRKyXho8?si=9RjcZb5x50pv4l6h" },
+            { title: "Projectile motion", image: "https://i.ytimg.com/vi/A-VGgN4-8OQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq6P0fCJqyew-wC_rtAjfmqlIiqw", link: "https://youtu.be/1-32AqPejVQ?si=MzSo3IbHqjxF3Hty" },
+            { title: "Circular motion", image: "https://i.ytimg.com/vi/4hJ3LUxqXRY/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAGIOdlo4tKuFDsnuCYSB738FQBAg", link: "https://youtu.be/4uZVVpetCx0?si=dPtj1_4R0gUB_VSF" }
+        ];
+
+        const container = document.getElementById('video-container');
+        videos.forEach(video => {
+            container.innerHTML += `
+                <div class="bento-card p-4 rounded-2xl flex flex-col">
+                    <img src="${video.image}" alt="${video.title}" class="rounded-lg mb-4 w-full h-40 object-cover">
+                    <h3 class="font-bold text-lg mb-4">${video.title}</h3>
+                    <a href="${video.link}" target="_blank" class="mt-auto bg-blue-600 hover:bg-blue-500 text-center py-2 rounded-lg font-semibold transition">
+                        Watch Now
+                    </a>
+                </div>
+            `;
+        });
+    </script>
+    
+   
+</body>
+</html>
